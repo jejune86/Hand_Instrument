@@ -3,15 +3,14 @@ import numpy as np
 import mediapipe_utils
 import pygame_utils
 
-def get_next_instrument(current_instrument):
-    return 'piano' if current_instrument == 'drum' else 'drum'
 
 def main():
     hands, mp_hands = mediapipe_utils.init_mediapipe()
     left_sounds, right_sounds = pygame_utils.init_pygame_sounds()
     
     cap = cv2.VideoCapture(0)
-    
+
+    cap.set(cv2.CAP_PROP_FPS, 60)    
     finger_indices = {'thumb': 3, 'index': 7, 'middle': 11, 'ring': 15, 'pinky': 19}
     sound_played = { 'left': {k: False for k in finger_indices.keys()}, 'right': {k: False for k in finger_indices.keys()} }
     threshold_angles = { 'thumb': 1.6, 'index': 1.0, 'middle': 1.0, 'ring': 0.9, 'pinky': 1.0 }
@@ -19,10 +18,21 @@ def main():
     current_instrument = 'piano'
     instrument_changed = False
 
+    
     while cap.isOpened():
         success, image = cap.read()
         if not success:
             continue
+        
+        image_height, image_width = image.shape[:2]
+        aspect_ratio = image_width / image_height
+        new_width = 1280
+        new_height = int(new_width / aspect_ratio)
+        if new_height > 720:
+            new_height = 720
+            new_width = int(new_height * aspect_ratio)
+            
+        image = cv2.resize(image, (new_width, new_height))    
 
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         image = cv2.flip(image, 1)
@@ -46,12 +56,12 @@ def main():
 
                 angles = mediapipe_utils.calculate_angles(hand_landmarks, finger_indices)
                 pygame_utils.play_sounds(sounds, angles, threshold_angles, sound_played, hand_label)
-
-            if all(sound_played['left'].values()) and all(sound_played['right'].values()) and not instrument_changed:
-                current_instrument = 'piano' if current_instrument == 'drum' else 'drum'
+                print(angles['thumb'])
+            if all(sound_played['right'].values()) and not instrument_changed:
+                current_instrument = pygame_utils.get_next_instrument(current_instrument)
                 instrument_changed = True
 
-            if not any(sound_played['left'].values()) and not any(sound_played['right'].values()):
+            if not any(sound_played['right'].values()):
                 instrument_changed = False
 
         cv2.imshow('MediaPipe Hands', image)
