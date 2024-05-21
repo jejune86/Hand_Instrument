@@ -28,3 +28,13 @@ def key_handle(input_key, sound_manager):
         sound_manager.adjust_thresholds(0.1)
     elif input_key == ord('-'):  # - 키 누를 시 임계값 감소
         sound_manager.adjust_thresholds(-0.1)
+    elif input_key == ord('m'): 
+        if not sound_manager.metronome_running:
+            sound_manager.start_metronome()
+        else:
+            sound_manager.stop_metronome()
+    elif input_key == ord('['):  # [ 키 누를 시 메트로놈 간격 감소
+        sound_manager.adjust_metronome_interval(-0.1)
+    elif input_key == ord(']'):  # ] 키 누를 시 메트로놈 간격 증가
+        sound_manager.adjust_metronome_interval(0.1)
+    

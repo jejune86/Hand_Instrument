@@ -1,4 +1,6 @@
 import pygame
+import time
+from threading import Thread
 
 # 손가락 인덱스와 초기 임계값 설정
 FINGER_INDICES = {'thumb': 3, 'index': 7, 'middle': 11, 'ring': 15, 'pinky': 19}
@@ -11,6 +13,10 @@ class SoundManager:
         self.instrument = 'Piano'
         self.instrument_changed = False
         self.selected_finger = 'thumb'
+        self.metronome_started = False
+        self.metronome_running = False 
+        self.metronome_thread = None
+        self.metronome_interval = 1.0
         self.thresholds = INITIAL_THRESHOLDS.copy()
         pygame.mixer.init()
         self.init_sounds()
@@ -64,14 +70,26 @@ class SoundManager:
                 }
             }
         }
+        self.metronome_sound = pygame.mixer.Sound('resource/sound/metronome.wav')
 
-    def fist_to_change(self):
+    def right_fist_to_change(self):
         if all(self.sound_played['right'].values()) and not self.instrument_changed:
             self.change_instrument()
             self.instrument_changed = True
         if not any(self.sound_played['right'].values()):
             self.instrument_changed = False
 
+    def left_fist_for_metronome(self):
+        if all(self.sound_played['left'].values()) and not self.metronome_started:
+            if self.metronome_running:
+                self.stop_metronome()
+            else :
+                self.start_metronome()
+            self.metronome_started = True
+            
+        if not any(self.sound_played['left'].values()):
+            self.metronome_started = False
+            
     def change_instrument(self):
         instruments = ['Piano', 'Drum', 'Xylophone']
         next_index = (instruments.index(self.instrument) + 1) % len(instruments)
@@ -99,6 +117,26 @@ class SoundManager:
                 if angle >= self.thresholds[finger]:
                     self.sound_played[hand_label][finger] = False
 
+    def start_metronome(self):
+        self.metronome_running = True
+        self.metronome_thread = Thread(target=self.metronome_loop)
+        self.metronome_thread.start()
+
+    def stop_metronome(self):
+        self.metronome_running = False
+        if self.metronome_thread:
+            self.metronome_thread.join()
+
+    def metronome_loop(self):
+        while self.metronome_running:
+            self.metronome_sound.play()
+            time.sleep(self.metronome_interval)   # 메트로놈 소리 간격 조정
+
+    def adjust_metronome_interval(self, adjustment):
+        self.metronome_interval += adjustment
+        if self.metronome_interval < 0.1:  # 최소 간격 제한
+            self.metronome_interval = 0.1
+            
     def adjust_thresholds(self, adjustment):
         self.thresholds[self.selected_finger] += adjustment
         if self.thresholds[self.selected_finger] < 0:  # 임계값이 음수가 되지 않도록

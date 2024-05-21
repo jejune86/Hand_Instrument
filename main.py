@@ -26,7 +26,8 @@ def main():
                 hand_label = 'left' if center_x < 0.5 else 'right'
                 angles = mp_u.calculate_angles(hand_landmarks)
                 sound_manager.play_sounds(angles, hand_label)
-            sound_manager.fist_to_change()
+            sound_manager.right_fist_to_change()
+            sound_manager.left_fist_for_metronome()
         
         cv2.imshow('Hand Instrument', image)
         
@@ -46,6 +47,7 @@ def main():
 
     cap.release()
     cv2.destroyAllWindows()
+    sound_manager.stop_metronome()
 
 if __name__ == "__main__":
     main()
