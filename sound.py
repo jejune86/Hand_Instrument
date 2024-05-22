@@ -4,7 +4,7 @@ from threading import Thread
 
 # 손가락 인덱스와 초기 임계값 설정
 FINGER_INDICES = {'thumb': 3, 'index': 7, 'middle': 11, 'ring': 15, 'pinky': 19}
-INITIAL_THRESHOLDS = {'thumb': 1.6, 'index': 1.0, 'middle': 1.0, 'ring': 0.9, 'pinky': 1.0}
+INITIAL_THRESHOLDS = {'thumb': 1.6, 'index': 1.10, 'middle': 1.20, 'ring': 1.00, 'pinky': 1.00}
 
 class SoundManager:
     def __init__(self):
@@ -114,9 +114,10 @@ class SoundManager:
                 if angle < self.thresholds[finger] and not self.sound_played[hand_label][finger]:
                     self.sounds[hand_label][self.instrument][finger].play()
                     self.sound_played[hand_label][finger] = True
+                    
                 if angle >= self.thresholds[finger]:
                     self.sound_played[hand_label][finger] = False
-
+            
     def start_metronome(self):
         self.metronome_running = True
         self.metronome_thread = Thread(target=self.metronome_loop)

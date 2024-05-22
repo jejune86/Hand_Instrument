@@ -3,32 +3,25 @@ import mediapipe_utils as mp_u
 from sound import SoundManager
 import visual
 import key_handle
+from process_hands import process_hands
 
 def main():
     mp_u.init_mediapipe()
-    sound_manager = SoundManager()  # SoundManager 인스턴스 생성
+    sound_manager = SoundManager()  # SoundManager for sound control
     
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(0)   # get camera input from webcam
     while cap.isOpened():
         success, image = cap.read()
+        
         if not success:
-            continue
+            print("Error: Failed to read frame from webcam.")
+            break
         
-        results, image = visual.process_image(image, sound_manager.instrument)
+        results, image = visual.process_image(image) # process image for hands and get hand results
         
-        if results.multi_hand_landmarks:
-            for hand_landmarks in results.multi_hand_landmarks:
-                mp_u.mp_drawing.draw_landmarks(image, hand_landmarks, mp_u.mp_hands.HAND_CONNECTIONS)
-                
-                x_coords = [landmark.x for landmark in hand_landmarks.landmark]
-                center_x = sum(x_coords) / len(x_coords)
-
-                hand_label = 'left' if center_x < 0.5 else 'right'
-                angles = mp_u.calculate_angles(hand_landmarks)
-                sound_manager.play_sounds(angles, hand_label)
-            sound_manager.right_fist_to_change()
-            sound_manager.left_fist_for_metronome()
-        
+        angles, image = process_hands(image, results, sound_manager) # handle hand results and play sounds
+            
+        image = visual.draw_output_image(image, results, sound_manager) # create output image
         cv2.imshow('Hand Instrument', image)
         
         input_key = cv2.waitKey(1) & 0xFF
@@ -37,14 +30,8 @@ def main():
         
         key_handle.key_handle(input_key, sound_manager)
         
-        if visual.threshold_window_visible:
-            threshold_image = visual.display_threshold_window(sound_manager)
-            cv2.imshow('Thresholds', threshold_image)
+        visual.window_controller(sound_manager, angles)
         
-        if visual.help_window_visible:
-            help_image = visual.display_help_window()
-            cv2.imshow('Help', help_image)
-
     cap.release()
     cv2.destroyAllWindows()
     sound_manager.stop_metronome()
