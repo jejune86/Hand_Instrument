@@ -5,8 +5,9 @@ def process_hands(image, results, sound_manager):
     if results.multi_hand_landmarks:
         for hand_landmarks, hand_label in zip(results.multi_hand_landmarks, results.multi_handedness):
             mp_u.mp_drawing.draw_landmarks(image, hand_landmarks, mp_u.mp_hands.HAND_CONNECTIONS)
-
-            label = hand_label.classification[0].label.lower()
+            
+            
+            
             x_coords = [landmark.x for landmark in hand_landmarks.landmark]
             center_x = sum(x_coords) / len(x_coords)
             hand_label = 'left' if center_x < 0.5 else 'right'

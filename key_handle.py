@@ -29,18 +29,20 @@ def key_handle(input_key, sound_manager):
     elif input_key == ord(']'):  # ] 키 누를 시 메트로놈 간격 증가
         sound_manager.adjust_metronome_interval(0.1)
     elif input_key == ord('c') :
-        if visual.remote_control_visible:
-            cv.destroyWindow('Remote Control')
         visual.remote_control_visible = not visual.remote_control_visible   
+    elif input_key == ord('i') :
+        if visual.help_window_visible:
+                cv.destroyWindow('Help')
+        visual.help_window_visible = not visual.help_window_visible    
     elif input_key == 13 and visual.remote_control_visible:  # Enter 키 누를 시 선택한 윈도우 표시/숨김
         selected_option = visual.window_options[visual.current_selection]
         if selected_option == "Help":
             if visual.help_window_visible:
                 cv.destroyWindow('Help')
             visual.help_window_visible = not visual.help_window_visible
-        elif selected_option == "Thresholds":
+        elif selected_option == "Sensitive Thresholds":
             if visual.threshold_window_visible:
-                cv.destroyWindow('Thresholds')
+                cv.destroyWindow('Sensitive Thresholds')
             visual.threshold_window_visible = not visual.threshold_window_visible
         elif selected_option == "Finger Info":
             if visual.finger_info_visible:
