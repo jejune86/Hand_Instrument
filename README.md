@@ -43,22 +43,23 @@ This project uses computer vision to create a virtual instrument that can be pla
     ```
 
 2. **Controls**:
-    1. KeyBoard
-    - `i`: Toggle the help window.
-    - `Space`: Change the instrument.
-    - `q` or `ESC`: Quit the application.
-    - `1` to `5`: Select thumb, index, middle, ring, or pinky finger respectively for threshold adjustment.
-    - `=` and `-`: Increase or decrease the threshold for the selected finger.
-    - `m`: Start/Stop the metronome.
-    - `[` and `]`: Decrease or increase the metronome interval.
-    - `c`: Toggle window control box.
-    - `z` and `x`: Navigate through the control box options.
-    - `Enter`: Toggle the selected window in the control box.
+    1. **KeyBoard**
+       - `i`: Toggle the help window.
+       - `Space`: Change the instrument.
+       - `q` or `ESC`: Quit the application.
+       - `1` to `5`: Select thumb, index, middle, ring, or pinky finger respectively for threshold adjustment.
+       - `=` and `-`: Increase or decrease the threshold for the selected finger.
+       - `m`: Start/Stop the metronome.
+       - `[` and `]`: Decrease or increase the metronome interval.
+       - `c`: Toggle window control box.
+       - `z` and `x`: Navigate through the control box options.
+       - `Enter`: Toggle the selected window in the control box.
     <br>
-    1. Hand
-    - `Bend your finger` to play sound
-    - `Make fist with Right hand` to change instrument
-    - `Make fist with Left hand` to start Metronome
+
+    2. **Hand**
+       - `Bend your finger` to play sound
+       - `Make fist with Right hand` to change instrument
+       - `Make fist with Left hand` to start Metronome
 
 (You can check this on Help window too)
 
@@ -86,16 +87,18 @@ This project uses computer vision to create a virtual instrument that can be pla
    1. **Piano** 
    
    <iframe width="560" height="315" src="https://www.youtube.com/embed/13rA8FfwtO4?si=AwsF5zR5rAOc5JOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
+    <br><br>
+
    2. **Xylophone** 
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/0ibOeEEJzJs?si=UNF3SlKG-sA_Ysnd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-   3. **Drum** 
+    <br><br>
 
+   3. **Drum** 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/iskAuhqkUgg?si=5sHdrlZ-xXV2mTWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br>
-   4. **Change Instrument and Metronome** 
+    <br><br>
+
+   4. **Change Instrument and Metronome**
 
    <iframe width="560" height="315" src="https://www.youtube.com/embed/0K80JKxfJ8Q?si=FMIMak-rtqd1qcM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
