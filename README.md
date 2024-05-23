@@ -74,7 +74,7 @@ This project uses computer vision to create a virtual instrument that can be pla
    2. **Help**
     <img src="resource/image/help.png">
     <br>
-   3. **Sensitivity Thresholds**
+   3. **Sensitivity Thresholds** 
     <img src="resource/image/sensitivity_threshold.png" width=300>
     - On the right side, it shows finger's current angle value
     - It makes sound, when the angle value is lower than threshold
