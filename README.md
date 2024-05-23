@@ -70,15 +70,15 @@ This project uses computer vision to create a virtual instrument that can be pla
       - Points of hand appears on the screen
       - Yellow is displayed on the fingers that make a sound.
       - On the right side of the screen, you can control other windows
-    <br>
+    <br><br>
    2. **Help** <br>
       <img src="resource/image/help.png">
-    <br>
+    <br><br>
    3. **Sensitivity Thresholds** <br>
       <img src="resource/image/sensitivity_threshold.png" width=300>
       - On the right side, it shows the finger's current angle value
       - It makes sound when the angle value is lower than the threshold
-    <br>
+    <br><br>
    4. **Finger Info** <br>
       <img src="resource/image/finger_info.png">
       - It shows the finger's current sound
