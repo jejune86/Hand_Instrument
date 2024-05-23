@@ -85,19 +85,19 @@ This project uses computer vision to create a virtual instrument that can be pla
 ## Program Usage Video
    1. **Piano** 
    
-   [![Watch the video](https://img.youtube.com/vi/13rA8FfwtO4/0.jpg)](https://youtu.be/13rA8FfwtO4)
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/13rA8FfwtO4?si=AwsF5zR5rAOc5JOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <br>
    2. **Xylophone** 
 
-   [![Watch the video](https://img.youtube.com/vi/0ibOeEEJzJs/0.jpg)](https://youtu.be/0ibOeEEJzJs)
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/0ibOeEEJzJs?si=UNF3SlKG-sA_Ysnd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <br>
    3. **Drum** 
 
-   [![Watch the video](https://img.youtube.com/vi/iskAuhqkUgg/0.jpg)](https://youtu.be/iskAuhqkUgg)
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/iskAuhqkUgg?si=5sHdrlZ-xXV2mTWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <br>
    4. **Change Instrument and Metronome** 
 
-   [![Watch the video](https://img.youtube.com/vi/0K80JKxfJ8Q/0.jpg)](https://youtu.be/0K80JKxfJ8Q)
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/0K80JKxfJ8Q?si=FMIMak-rtqd1qcM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
 
 ## License
