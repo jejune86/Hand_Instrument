@@ -8,7 +8,7 @@ remote_control_visible = True
 finger_info_visible = False
 
 current_selection = 0
-window_options = ["Help", "Sensitive Thresholds", "Finger Info"]
+window_options = ["Help", "Sensitivity Thresholds", "Finger Info"]
 
 finger_info_image = {
     'Drum' : cv.imread('resource/image/drum.png'),
@@ -95,7 +95,7 @@ def display_threshold_window(sound_manager, angles):
         draw_text(threshold_image, f'{finger}: {value:.2f}', (10, y_pos), color=color)
         y_pos += 40
     draw_text(threshold_image, 'Use 1-5 to select finger', (10, 280), color=(0, 0, 0))
-    draw_text(threshold_image, 'Use +/- Key to adjust', (10, 310), color=(0, 0, 0))
+    draw_text(threshold_image, 'Use LEFT RIGHT Key to adjust', (10, 310), color=(0, 0, 0))
     
     y_pos = 70
     for finger, angle in angles.items():
@@ -111,7 +111,7 @@ def window_controller(sound_manager, angles):
         cv.imshow('Help', help_image)
     if threshold_window_visible:
         threshold_image = display_threshold_window(sound_manager, angles)
-        cv.imshow('Sensitive Thresholds', threshold_image)
+        cv.imshow('Sensitivity Thresholds', threshold_image)
     if finger_info_visible:
         finger_info_image = display_finger_info(sound_manager.instrument)
         cv.imshow('Finger Info', finger_info_image)

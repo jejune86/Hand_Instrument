@@ -1,4 +1,4 @@
-import cv2
+import cv2 as cv
 import mediapipe_utils as mp_u
 from sound import SoundManager
 import visual
@@ -9,7 +9,7 @@ def main():
     mp_u.init_mediapipe()
     sound_manager = SoundManager()  # SoundManager for sound control
     
-    cap = cv2.VideoCapture(0)   # get camera input from webcam
+    cap = cv.VideoCapture(0)   # get camera input from webcam
     while cap.isOpened():
         success, image = cap.read()
         
@@ -22,9 +22,9 @@ def main():
         angles, image = process_hands(image, results, sound_manager) # handle hand results and play sounds
             
         image = visual.draw_output_image(image, results, sound_manager) # create output image
-        cv2.imshow('Hand Instrument', image)
+        cv.imshow('Hand Instrument', image)
         
-        input_key = cv2.waitKey(1) & 0xFF
+        input_key = cv.waitKey(1) & 0xFF
         if input_key == 27 or input_key == ord('q'):  # esc or q 누를 시 종료
             break
         
@@ -33,7 +33,7 @@ def main():
         visual.window_controller(sound_manager, angles)
         
     cap.release()
-    cv2.destroyAllWindows()
+    cv.destroyAllWindows()
     sound_manager.stop_metronome()
 
 if __name__ == "__main__":

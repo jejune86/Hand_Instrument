@@ -40,9 +40,9 @@ def key_handle(input_key, sound_manager):
             if visual.help_window_visible:
                 cv.destroyWindow('Help')
             visual.help_window_visible = not visual.help_window_visible
-        elif selected_option == "Sensitive Thresholds":
+        elif selected_option == "Sensitivity Thresholds":
             if visual.threshold_window_visible:
-                cv.destroyWindow('Sensitive Thresholds')
+                cv.destroyWindow('Sensitivity Thresholds')
             visual.threshold_window_visible = not visual.threshold_window_visible
         elif selected_option == "Finger Info":
             if visual.finger_info_visible:

@@ -4,7 +4,7 @@ from threading import Thread
 
 # 손가락 인덱스와 초기 임계값 설정
 FINGER_INDICES = {'thumb': 3, 'index': 7, 'middle': 11, 'ring': 15, 'pinky': 19}
-INITIAL_THRESHOLDS = {'thumb': 1.6, 'index': 1.10, 'middle': 1.20, 'ring': 1.00, 'pinky': 1.00}
+INITIAL_THRESHOLDS = {'thumb': 1.6, 'index': 1.00, 'middle': 1.20, 'ring': 1.00, 'pinky': 0.9}
 
 class SoundManager:
     def __init__(self):
@@ -134,14 +134,11 @@ class SoundManager:
             time.sleep(self.metronome_interval)   # 메트로놈 소리 간격 조정
 
     def adjust_metronome_interval(self, adjustment):
-        self.metronome_interval += adjustment
-        if self.metronome_interval < 0.1:  # 최소 간격 제한
-            self.metronome_interval = 0.1
+        self.metronome_interval = max(0.1, self.metronome_interval + adjustment)
             
     def adjust_thresholds(self, adjustment):
-        self.thresholds[self.selected_finger] += adjustment
-        if self.thresholds[self.selected_finger] < 0:  # 임계값이 음수가 되지 않도록
-            self.thresholds[self.selected_finger] = 0
+        self.thresholds[self.selected_finger] = max(0, self.thresholds[self.selected_finger] + adjustment)
+
 
     def get_thresholds(self):
         return self.thresholds
