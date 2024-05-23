@@ -84,23 +84,27 @@ This project uses computer vision to create a virtual instrument that can be pla
     - It shows fingers current sound
 
 ## Program Usage Video
-   1. **Piano** 
-   
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/13rA8FfwtO4?si=AwsF5zR5rAOc5JOh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br><br>
+   1. **Piano**
 
-   2. **Xylophone** 
+   [![Piano](https://img.youtube.com/vi/13rA8FfwtO4/0.jpg)](https://www.youtube.com/watch?v=13rA8FfwtO4)
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/0ibOeEEJzJs?si=UNF3SlKG-sA_Ysnd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br><br>
+   <br><br>
 
-   3. **Drum** 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/iskAuhqkUgg?si=5sHdrlZ-xXV2mTWu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <br><br>
+   2. **Xylophone**
+
+   [![Xylophone](https://img.youtube.com/vi/0ibOeEEJzJs/0.jpg)](https://www.youtube.com/watch?v=0ibOeEEJzJs)
+
+   <br><br>
+
+   3. **Drum**
+
+   [![Drum](https://img.youtube.com/vi/iskAuhqkUgg/0.jpg)](https://www.youtube.com/watch?v=iskAuhqkUgg)
+
+   <br><br>
 
    4. **Change Instrument and Metronome**
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/0K80JKxfJ8Q?si=FMIMak-rtqd1qcM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+   [![Change Instrument and Metronome](https://img.youtube.com/vi/0K80JKxfJ8Q/0.jpg)](https://www.youtube.com/watch?v=0K80JKxfJ8Q)
     
 
 ## License
