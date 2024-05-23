@@ -83,17 +83,21 @@ This project uses computer vision to create a virtual instrument that can be pla
     - It shows fingers current sound
 
 ## Program Usage Video
-   1. **Piano**
-    [![Watch the video](https://img.youtube.com/vi/13rA8FfwtO4/0.jpg)](https://youtu.be/13rA8FfwtO4)
+   1. **Piano** 
+   
+   [![Watch the video](https://img.youtube.com/vi/13rA8FfwtO4/0.jpg)](https://youtu.be/13rA8FfwtO4)
     <br>
-   2. **Xylophone**
-    [![Watch the video](https://img.youtube.com/vi/0ibOeEEJzJs/0.jpg)](https://youtu.be/0ibOeEEJzJs)
+   2. **Xylophone** 
+
+   [![Watch the video](https://img.youtube.com/vi/0ibOeEEJzJs/0.jpg)](https://youtu.be/0ibOeEEJzJs)
     <br>
-   3. **Drum**
-    [![Watch the video](https://img.youtube.com/vi/iskAuhqkUgg/0.jpg)](https://youtu.be/iskAuhqkUgg)
+   3. **Drum** 
+
+   [![Watch the video](https://img.youtube.com/vi/iskAuhqkUgg/0.jpg)](https://youtu.be/iskAuhqkUgg)
     <br>
    4. **Change Instrument and Metronome** 
-    [![Watch the video](https://img.youtube.com/vi/0K80JKxfJ8Q/0.jpg)](https://youtu.be/0K80JKxfJ8Q)
+
+   [![Watch the video](https://img.youtube.com/vi/0K80JKxfJ8Q/0.jpg)](https://youtu.be/0K80JKxfJ8Q)
     
 
 ## License
